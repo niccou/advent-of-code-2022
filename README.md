@@ -1,3 +1,6 @@
+| Event | [Advent of code](https://adventofcode.com/2022) |
+|---|---|
+
 # Advent of code 2022
 
 This repo is here to group all my developments to answer the advent of code challenge.
