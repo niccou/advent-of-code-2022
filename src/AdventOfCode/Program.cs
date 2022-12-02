@@ -3,18 +3,32 @@ using System.Text;
 
 using AdventOfCode;
 
-var day1Input = System.IO.File.ReadAllLines("src/AdventOfCode/Day1.txt");
+Day2();
 
-var sumByElf = day1Input.SumByElf();
+static void Day1()
+{
+    var input = System.IO.File.ReadAllLines("src/AdventOfCode/Day1.txt");
 
-var max = sumByElf.Max();
+    var sumByElf = input.SumByElf();
 
-var sum = sumByElf.OrderDescending().Take(3).Sum();
+    var max = sumByElf.Max();
 
-StringBuilder sb = new();
+    var sum = sumByElf.OrderDescending().Take(3).Sum();
 
-sb
-    .AppendLine($"The max is : {max}")
-    .AppendLine($"The top three elves sum is : {sum}");
+    StringBuilder sb = new();
 
-Console.WriteLine(sb.ToString());
+    sb
+        .AppendLine($"The max is : {max}")
+        .AppendLine($"The top three elves sum is : {sum}");
+
+    Console.WriteLine(sb.ToString());
+}
+
+static void Day2()
+{
+    var input = System.IO.File.ReadAllLines("src/AdventOfCode/Day2.txt");
+
+    var totalScore = input.CalculateFinalScore();
+
+    Console.WriteLine($"The total score is {totalScore}");
+}
