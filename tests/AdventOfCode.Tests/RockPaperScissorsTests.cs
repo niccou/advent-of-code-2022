@@ -9,9 +9,9 @@ public class RockPaperScissorsTests
     };
 
     [Theory]
-    [InlineData("A Y", 8)]
+    [InlineData("A Y", 4)]
     [InlineData("B X", 1)]
-    [InlineData("C Z", 6)]
+    [InlineData("C Z", 7)]
     public void CalculateScoreForRound(string round, int expectedScore)
     {
         int score = round.CalculateScore();
@@ -22,7 +22,7 @@ public class RockPaperScissorsTests
     [Fact]
     public void CalculateFinalScore()
     {
-        int expectedScore = 15;
+        int expectedScore = 12;
         int finalScore = _sample.CalculateFinalScore();
 
         finalScore.Should().Be(expectedScore);
