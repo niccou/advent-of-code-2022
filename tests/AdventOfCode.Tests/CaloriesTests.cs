@@ -1,6 +1,6 @@
 namespace AdventOfCode.Tests;
 
-public class UnitTest1
+public class CaloriesTests
 {
     private readonly List<string> _sample = new(){
         "1000",
