@@ -2,12 +2,12 @@ namespace AdventOfCode;
 
 public static class RockPaperScissors
 {
-    public const string ElfRock = "A";
-    public const string ElfPaper = "B";
-    public const string ElfScissors = "C";
-    public const string PlayerRock = "X";
-    public const string PlayerPaper = "Y";
-    public const string PlayerScissors = "Z";
+    public const string Rock = "A";
+    public const string Paper = "B";
+    public const string Scissors = "C";
+    public const string LoseRound = "X";
+    public const string DrawRound = "Y";
+    public const string WinRound = "Z";
     public const int RockPoints = 1;
     public const int PaperPoints = 2;
     public const int ScissorsPoints = 3;
@@ -15,36 +15,33 @@ public static class RockPaperScissors
     public const int Draw = 3;
     public const int Win = 6;
 
-    private static int RoundResult(string elfShape, string playerShape)
-        => elfShape switch
-        {
-            ElfRock => playerShape switch {
-                PlayerPaper => Win,
-                PlayerRock => Draw,
-                _ => Lose
-            },
-            ElfPaper => playerShape switch {
-                PlayerScissors => Win,
-                PlayerPaper => Draw,
-                _ => Lose
-            },
-            ElfScissors => playerShape switch {
-                PlayerRock => Win,
-                PlayerScissors => Draw,
-                _ => Lose
-            },
-            _ => Lose
-        };
-
     private static int ShapePoints(string playerShape)
-        => playerShape switch{
-            PlayerPaper => PaperPoints,
-            PlayerRock => RockPoints,
-            PlayerScissors => ScissorsPoints,
-            _ => 0
+        => playerShape switch
+        {
+            Paper => PaperPoints,
+            Rock => RockPoints,
+            _ => ScissorsPoints
         };
 
-    private static (string ElfShape, string PlayerShape) GetRoundShapes(this string round)
+    private static string PlayerShape(string elfShape, string expectedResult)
+        => expectedResult switch
+        {
+            LoseRound => elfShape switch
+            {
+                Rock => Scissors,
+                Paper => Rock,
+                _ => Paper
+            },
+            WinRound => elfShape switch
+            {
+                Rock => Paper,
+                Paper => Scissors,
+                _ => Rock
+            },
+            _ => elfShape
+        };
+
+    private static (string ElfShape, string ExpectedResult) GetElfShapeAndExpectedResult(this string round)
     {
         var shapes = round.Split(' ');
 
@@ -53,10 +50,18 @@ public static class RockPaperScissors
 
     public static int CalculateScore(this string round)
     {
-        var (elfShape, playerShape) = round.GetRoundShapes();
-
-        return ShapePoints(playerShape) + RoundResult(elfShape, playerShape);
+        var (elfShape, expectedResult) = round.GetElfShapeAndExpectedResult();
+        var playerShape = PlayerShape(elfShape, expectedResult);
+        return ShapePoints(playerShape) + RoundResult(expectedResult);
     }
+
+    private static int RoundResult(string expectedResult)
+        => expectedResult switch
+        {
+            WinRound => Win,
+            DrawRound => Draw,
+            _ => Lose
+        };
 
     public static int CalculateFinalScore(this IEnumerable<string> rounds)
         => rounds.Sum(CalculateScore);
