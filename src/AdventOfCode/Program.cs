@@ -3,7 +3,7 @@ using System.Text;
 
 using AdventOfCode;
 
-Day2();
+Day3();
 
 static void Day1()
 {
@@ -31,4 +31,15 @@ static void Day2()
     var totalScore = input.CalculateFinalScore();
 
     Console.WriteLine($"The total score is {totalScore}");
+}
+
+static void Day3()
+{
+    var input = System.IO.File.ReadAllLines("src/AdventOfCode/Day3.txt");
+
+    var priority = input.GetPriorityForDoubles();
+    var badges = input.GetPriorityForBadges();
+
+    Console.WriteLine($"The total priority for doubles is {priority}");
+    Console.WriteLine($"The total priority for badges is {badges}");
 }
