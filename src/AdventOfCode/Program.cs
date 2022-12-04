@@ -3,7 +3,7 @@ using System.Text;
 
 using AdventOfCode;
 
-Day3();
+Day4();
 
 static void Day1()
 {
@@ -42,4 +42,15 @@ static void Day3()
 
     Console.WriteLine($"The total priority for doubles is {priority}");
     Console.WriteLine($"The total priority for badges is {badges}");
+}
+
+static void Day4()
+{
+    var input = System.IO.File.ReadAllLines("src/AdventOfCode/Day4.txt");
+
+    var fullyContainedCount = input.FullyContainedCount();
+    var overlapCount = input.OverlapCount();
+
+    Console.WriteLine($"The count of fully contained assignments is {fullyContainedCount}");
+    Console.WriteLine($"The count of overlap is {overlapCount}");
 }
