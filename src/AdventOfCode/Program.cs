@@ -74,3 +74,13 @@ static void Day5()
     var topCrates = cargo.ProcessMoves(moves).DisplayTopCrates();
     Console.WriteLine($"The crates at the top are {topCrates}");
 }
+
+static void Day6()
+{
+    var input = System.IO.File.ReadAllText("src/AdventOfCode/Day6.txt");
+
+    var packetIndex = input.StartOfPacketIndex();
+    var messageIndex = input.StartOfMessageIndex();
+
+    Console.WriteLine($"The packet index is {packetIndex} and the message index is {messageIndex}");
+}
