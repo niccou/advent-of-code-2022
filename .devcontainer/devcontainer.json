@@ -9,7 +9,6 @@
 	"customizations": {
 		"vscode": {		
 			"extensions": [
-				// "Ionide.Ionide-fsharp",
 				"ms-dotnettools.csharp",
 				"formulahendry.dotnet-test-explorer"
 			]

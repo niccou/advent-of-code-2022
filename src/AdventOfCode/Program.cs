@@ -3,7 +3,7 @@ using System.Text;
 
 using AdventOfCode;
 
-Day4();
+Day5();
 
 static void Day1()
 {
@@ -53,4 +53,24 @@ static void Day4()
 
     Console.WriteLine($"The count of fully contained assignments is {fullyContainedCount}");
     Console.WriteLine($"The count of overlap is {overlapCount}");
+}
+
+static void Day5()
+{
+    string[] input = { };
+
+    if (System.IO.File.Exists("src/AdventOfCode/Day5.txt"))
+    {
+        input = System.IO.File.ReadAllLines("src/AdventOfCode/Day5.txt");
+    }
+    else
+    {
+        input = System.IO.File.ReadAllLines("Day5.txt");
+    }
+
+    var cargo = input.GetStartingCrates();
+    var moves = input.GetMoves();
+
+    var topCrates = cargo.ProcessMoves(moves).DisplayTopCrates();
+    Console.WriteLine($"The crates at the top are {topCrates}");
 }
