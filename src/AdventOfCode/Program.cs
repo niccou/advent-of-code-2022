@@ -71,7 +71,7 @@ static void Day5()
     var cargo = input.GetStartingCrates();
     var moves = input.GetMoves();
 
-    var topCrates = cargo.ProcessMoves(moves).DisplayTopCrates();
+    var topCrates = cargo.ProcessCrateMover9001Moves(moves).DisplayTopCrates();
     Console.WriteLine($"The crates at the top are {topCrates}");
 }
 

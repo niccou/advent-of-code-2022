@@ -91,7 +91,16 @@ public static class SupplyStacks
         return cargo;
     }
 
-    public static IDictionary<int, Stack<string>> ProcessMoves(this IDictionary<int, Stack<string>> cargo, Move[] moves)
+    public static IDictionary<int, Stack<string>> ProcessCrateMover9000Moves(this IDictionary<int, Stack<string>> cargo, Move[] moves)
+    {
+        foreach (var move in moves)
+        {
+            cargo = cargo.ProcessCrateMover9000Move(move);
+        }
+        return cargo;
+    }
+
+    public static IDictionary<int, Stack<string>> ProcessCrateMover9001Moves(this IDictionary<int, Stack<string>> cargo, Move[] moves)
     {
         foreach (var move in moves)
         {

@@ -125,7 +125,7 @@ public class SupplyStacksTests
         
         var moves = _sample.GetMoves();
 
-        cargo = cargo.ProcessMoves(moves);
+        cargo = cargo.ProcessCrateMover9000Moves(moves);
 
         cargo[1].Peek().Should().Be("C");
         cargo[2].Peek().Should().Be("M");
@@ -139,7 +139,7 @@ public class SupplyStacksTests
         
         var moves = _sample.GetMoves();
 
-        var display = cargo.ProcessMoves(moves).DisplayTopCrates();
+        var display = cargo.ProcessCrateMover9000Moves(moves).DisplayTopCrates();
 
         display.Should().Be("CMZ");
     }
