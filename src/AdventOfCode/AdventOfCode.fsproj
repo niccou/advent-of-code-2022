@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Day01\AdventOfCode.Day01.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day02\AdventOfCode.Day02.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day03\AdventOfCode.Day03.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day04\AdventOfCode.Day04.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day05\AdventOfCode.Day05.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day06\AdventOfCode.Day06.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day07\AdventOfCode.Day07.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day08\AdventOfCode.Day08.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day09\AdventOfCode.Day09.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day10\AdventOfCode.Day10.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day11\AdventOfCode.Day11.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day12\AdventOfCode.Day12.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day13\AdventOfCode.Day13.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day14\AdventOfCode.Day14.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day15\AdventOfCode.Day15.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day16\AdventOfCode.Day16.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day17\AdventOfCode.Day17.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day18\AdventOfCode.Day18.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day19\AdventOfCode.Day19.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day20\AdventOfCode.Day20.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day21\AdventOfCode.Day21.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day22\AdventOfCode.Day22.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day23\AdventOfCode.Day23.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day24\AdventOfCode.Day24.fsproj" />
+    <ProjectReference Include="..\AdventOfCode.Day25\AdventOfCode.Day25.fsproj" />
+  </ItemGroup>
+
+</Project>
