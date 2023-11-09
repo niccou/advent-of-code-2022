@@ -10,8 +10,16 @@
 		"vscode": {		
 			"extensions": [
 				"ms-dotnettools.csharp",
-				"formulahendry.dotnet-test-explorer"
+				"formulahendry.dotnet-test-explorer",
+				"ms-dotnettools.csdevkit",
+				"github.vscode-github-actions"
 			]
 		}
-	}
+	},
+
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.profile,target=/home/vscode/.profile,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+	  ]
 }
